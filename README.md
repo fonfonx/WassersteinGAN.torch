@@ -2,7 +2,7 @@
 
 This repository provides a Torch implementation of Wasserstein GAN as described by Arjovsky *et. al.* in their paper [Wasserstein GAN](https://arxiv.org/abs/1701.07875).
 
-![](generated.png)
+![](images.png)
 
 ## Prerequisites
 - Torch
@@ -34,7 +34,7 @@ net=<path_to_generator_network> name=<name_to_save_images> th generate.lua
 net=checkpoints/generator.t7 name=myimages display=2929 th generate.lua
 ```
 
-The generated images are save in `myimages.png`.
+The generated images are saved in `myimages.png`.
 
 ## Display images in a browser
 
