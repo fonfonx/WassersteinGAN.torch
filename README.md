@@ -116,7 +116,7 @@ DATA_ROOT=[PATH_TO_IMAGENET]/train dataset=folder th main.lua
    dataset = 'lsun',       -- imagenet / lsun / folder
    batchSize = 64,
    loadSize = 96,
-   fineSize = 64,
+   imgSize = 64,
    nz = 100,               -- #  of dim for Z
    ngf = 64,               -- #  of gen filters in first conv layer
    ndf = 64,               -- #  of discrim filters in first conv layer

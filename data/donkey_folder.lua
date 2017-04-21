@@ -28,17 +28,19 @@ local trainCache = paths.concat(cache, cache_prefix .. '_trainCache.t7')
 
 --------------------------------------------------------------------------------------------
 local loadSize   = {3, opt.loadSize}
-local sampleSize = {3, opt.fineSize}
+local sampleSize = {3, opt.imgSize}
 
 local function loadImage(path)
    local input = image.load(path, 3, 'float')
    -- find the smaller dimension, and resize it to loadSize[2] (while keeping aspect ratio)
-   local iW = input:size(3)
-   local iH = input:size(2)
-   if iW < iH then
-      input = image.scale(input, loadSize[2], loadSize[2] * iH / iW)
-   else
-      input = image.scale(input, loadSize[2] * iW / iH, loadSize[2])
+   if loadSize[2] ~= 0 then
+       local iW = input:size(3)
+       local iH = input:size(2)
+       if iW < iH then
+          input = image.scale(input, loadSize[2], loadSize[2] * iH / iW)
+       else
+          input = image.scale(input, loadSize[2] * iW / iH, loadSize[2])
+       end
    end
    return input
 end
@@ -56,15 +58,15 @@ local trainHook = function(self, path)
    local iH = input:size(2)
 
    -- do random crop
-   local oW = sampleSize[2];
+   local oW = sampleSize[2]
    local oH = sampleSize[2]
-   local h1 = math.ceil(torch.uniform(1e-2, iH-oH))
-   local w1 = math.ceil(torch.uniform(1e-2, iW-oW))
+   local h1 = math.min(math.ceil(torch.uniform(1e-2, iH - oH)), iH - oH)
+   local w1 = math.min(math.ceil(torch.uniform(1e-2, iW - oW)), iW - oW)
    local out = image.crop(input, w1, h1, w1 + oW, h1 + oH)
    assert(out:size(2) == oW)
    assert(out:size(3) == oH)
    -- do hflip with probability 0.5
-   if torch.uniform() > 0.5 then out = image.hflip(out); end
+   -- if torch.uniform() > 0.5 then out = image.hflip(out); end
    out:mul(2):add(-1) -- make it [0, 1] -> [-1, 1]
    return out
 end
