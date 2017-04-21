@@ -1,3 +1,5 @@
+This code is adapted from dcgan.torch software. The License for dcgan.torch is as follows:
+
 BSD License
 
 For dcgan.torch software

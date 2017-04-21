@@ -1,3 +1,8 @@
+--[[
+    This file is copied from dcgan.torch
+    (see https://github.com/soumith/dcgan.torch/blob/master/data/crop_celebA.lua).
+--]]
+
 require 'torch'
 require 'image'
 

@@ -1,3 +1,8 @@
+--[[
+    This file is a modified version of the one from dcgan.torch
+    (see https://github.com/soumith/dcgan.torch/blob/master/generate.lua).
+]]--
+
 require 'image'
 require 'nn'
 local optnet = require 'optnet'

@@ -1,3 +1,8 @@
+--[[
+    This file is copied from dcgan.torch
+    (see https://github.com/soumith/dcgan.torch/blob/master/data/data.lua).
+--]]
+
 local Threads = require 'threads'
 Threads.serialization('threads.sharedserialize')
 

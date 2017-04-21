@@ -1,4 +1,7 @@
 --[[
+    This file is copied from dcgan.torch
+    (see https://github.com/soumith/dcgan.torch/blob/master/data/dataset.lua).
+
     Copyright (c) 2015-present, Facebook, Inc.
     All rights reserved.
 

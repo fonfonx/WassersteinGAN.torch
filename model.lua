@@ -1,3 +1,8 @@
+--[[
+    This file is adapted from the code of dcgan.torch software
+    (see https://github.com/soumith/dcgan.torch/blob/master/main.lua).
+]]--
+
 local function weights_init(m)
    local name = torch.type(m)
    if name:find('Convolution') then

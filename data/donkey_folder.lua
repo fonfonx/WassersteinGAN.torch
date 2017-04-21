@@ -1,4 +1,7 @@
 --[[
+    This file is a modified version of the one from dcgan.torch
+    (see https://github.com/soumith/dcgan.torch/blob/master/data/donkey_folder.lua).
+
     Copyright (c) 2015-present, Facebook, Inc.
     All rights reserved.
 
