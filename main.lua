@@ -13,7 +13,7 @@ opt = {
     batchSize = 64,
     beta1 = 0.5,            -- momentum term of adam
     c = 0.01,               -- bound for weight clipping of the critic
-    dataset = 'folder',     -- imagenet / lsun / folder
+    dataset = 'folder',     -- folder
     display = 6050,         -- port for displaying images during training / 0 = false
     display_id = 10,        -- display window id.
     gpu = 1,                -- gpu = 0 is CPU mode. gpu=X is GPU mode on GPU X
