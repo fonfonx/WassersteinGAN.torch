@@ -2,6 +2,8 @@
 
 This repository provides a Torch implementation of Wasserstein GAN as described by Arjovsky *et. al.* in their paper [Wasserstein GAN](https://arxiv.org/abs/1701.07875).
 
+![](generated.png)
+
 ## Prerequisites
 - Torch
 - `cutorch`, `cunn` and `cudnn` to train the network on GPU. Training on CPU is supported but not recommended (very slow)
